@@ -29,14 +29,7 @@ pub fn nvim_get_option(name: &str) -> Result<Object, Error> {
     let api_name = NvimString::new(name)?;
     let mut out_err = LuaError::default();
 
-    let object = unsafe {
-        private::get_option_from(
-            std::ptr::null(),
-            SReq::Global as i32,
-            api_name,
-            &mut out_err,
-        )
-    };
+    let object = unsafe { private::nvim_get_option(api_name, &mut out_err) };
 
     if out_err.is_err() {
         Err(Error::from(out_err))

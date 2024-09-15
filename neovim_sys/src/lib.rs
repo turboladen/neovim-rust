@@ -12,7 +12,6 @@
     clippy::pedantic,
     future_incompatible,
     missing_copy_implementations,
-    missing_docs,
     nonstandard_style,
     rust_2018_idioms,
     trivial_casts,
@@ -27,8 +26,8 @@ pub mod buffer_defs;
 pub mod getchar;
 pub mod globals;
 pub mod option;
-pub mod vim;
 pub mod types;
+pub mod vim;
 
 #[cfg(test)]
 #[allow(dead_code)]

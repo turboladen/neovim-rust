@@ -29,4 +29,7 @@ extern "C" {
     /// If the return value is null, an error occurred, so you should check `error` for such.
     ///
     pub fn find_buffer_by_handle(buffer: Buffer, error: *mut LuaError) -> *const buf_T;
+
+    /// https://github.com/neovim/neovim/blob/master/src/nvim/api/vim.c#L682
+    pub fn nvim_get_option(name: NvimString, error: *mut LuaError) -> Object;
 }
